@@ -1,0 +1,88 @@
+.background {
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+}
+
+.content {
+    left: 0px;
+    top: 75vh;
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    background-color: transparent;
+}
+
+.title {
+    position: absolute;
+    font-family: "Montserrat";
+    font-size: 3.89vh;
+    line-height: 5vh;
+    letter-spacing: 0.55px;
+    color: white;
+    user-select: none;
+    font-style: normal;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-top: 0.74vh;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    left: 9.5vw;
+    right: 7.5vw;
+    top: 5.19vh;
+    pointer-events: none;
+}
+
+.container {
+    position: absolute;
+    top: 0vh;
+    left: 9.5vw;
+    right: 7.5vw;
+    height: 10vh;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.seekContainer {
+    display: flex;
+    position: relative;
+    left: 1vw;
+    top: 2.5vh;
+    width: 80vw;
+    height: 5vh;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.time {
+    font-size: 2.222vh;
+    letter-spacing: 0.035vw;
+    font-variant-numeric: tabular-nums;
+    color: white;
+    pointer-events: none;
+    user-select: none;
+}
+
+.bar {
+    overflow: hidden;
+    flex: 1;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 5vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pos {
+    position: relative;
+    border-radius: 6px;
+    width: 20px;
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}

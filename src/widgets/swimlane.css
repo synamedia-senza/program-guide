@@ -1,0 +1,63 @@
+.swimlane {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
+
+.title {
+    margin-left: 6px;
+    pointer-events: none;
+    color: white;
+    font-size: 24px;
+    width: max-content;
+    font-weight: bold;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.assets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.asset {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.poster {
+    pointer-events: none;
+    border-radius: 6px;
+    border: 3px solid transparent;
+    object-fit: cover;
+    background-color: black;
+    user-select: none;
+}
+
+.poster.focus {
+    border: 3px solid white;
+}
+
+.poster.portrait {
+    width: 250px;
+    height: 375px;
+}
+
+.poster.landscape {
+    width: 384px;
+    height: 216px;
+}
+
+.label {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    pointer-events: none;
+    color: white;
+    font-size: 16px;
+}
