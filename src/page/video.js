@@ -1,6 +1,7 @@
 import { classNames, createElement, importStyles } from "../core/ui/element.js";
 import { KEY_CODES } from "../core/ui/key.js";
 import { Page } from "../core/ui/page.js";
+import lifecycleAdditions from "../lifecycle-additions.js";
 
 class VideoPage extends Page {
     constructor() {
@@ -13,6 +14,7 @@ class VideoPage extends Page {
         this.root.onclick = () => {
             Page.goto("/banner");
         };
+        lifecycleAdditions.autoBackgroundDelay = 10;
     }
 
     loadAsset(asset) {
@@ -21,11 +23,13 @@ class VideoPage extends Page {
     }
 
     pageFocused() {
-        this.player.play();
+        setTimeout(() => this.player.play(), 100);
+        lifecycleAdditions.autoBackground = true;
     }
 
     pageBlurred() {
         this.player.pause();
+        lifecycleAdditions.autoBackground = false;
     }
 
     handleKey(e) {
