@@ -23,7 +23,7 @@ class VideoPage extends Page {
     }
 
     pageFocused() {
-        setTimeout(() => this.player.play(), 100);
+        this.player.play();
         lifecycleAdditions.autoBackground = true;
     }
 
