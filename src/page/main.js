@@ -15,9 +15,9 @@ class MainPage extends Page {
         this.populate(epgData);
     }
 
-    gotoAsset(asset) {
+    async gotoAsset(asset) {
         const videoPage = Page.instance("video");
-        videoPage.loadAsset(asset);
+        await videoPage.loadAsset(asset);
 
         Page.goto("video");
     }

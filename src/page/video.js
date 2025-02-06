@@ -17,9 +17,9 @@ class VideoPage extends Page {
         lifecycleAdditions.autoBackgroundDelay = 10;
     }
 
-    loadAsset(asset) {
+    async loadAsset(asset) {
         this.asset = asset;
-        this.player.load(asset);
+        await this.player.load(asset);
     }
 
     pageFocused() {
