@@ -15,9 +15,9 @@ class VideoPage extends Page {
         };
     }
 
-    loadAsset(asset) {
+    async loadAsset(asset) {
         this.asset = asset;
-        this.player.load(asset);
+        await this.player.load(asset);
     }
 
     pageFocused() {

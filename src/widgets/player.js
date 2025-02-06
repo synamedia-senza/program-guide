@@ -10,6 +10,12 @@ export class PlayerWidget extends HTMLElement {
         }, "video");
         this.player = new shaka.Player();
         this.player.attach(this.video);
+        this.playMode = false;
+        this.video.addEventListener('canplay', () => {
+            if (this.playMode) {
+                this.video.play();
+            }
+        });
     }
 
     configure() {
@@ -62,10 +68,12 @@ export class PlayerWidget extends HTMLElement {
     }
 
     play() {
+        this.playMode = true;
         this.video.play();
     }
 
     pause() {
+        this.playMode = false;
         this.video.pause();
     }
 }
