@@ -13,7 +13,6 @@ class VideoPage extends Page {
         this.root.onclick = () => {
             Page.goto("/banner");
         };
-        senza.lifecycle.autoBackgroundDelay = 10;
     }
 
     async loadAsset(asset) {
@@ -23,12 +22,10 @@ class VideoPage extends Page {
 
     pageFocused() {
         this.player.play();
-        senza.lifecycle.autoBackground = true;
     }
 
     pageBlurred() {
         this.player.pause();
-        senza.lifecycle.autoBackground = false;
     }
 
     handleKey(e) {
