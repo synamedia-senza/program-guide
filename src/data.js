@@ -39,13 +39,30 @@ const epgData = [
         "orientation": "landscape",
         "assets": [
             {
+                "source": "https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd",
+                "poster": "images/posters/art-of-motion.jpg",
+                "title": "Art of Motion",
+                "license":"https://cwip-shaka-proxy.appspot.com/no_auth"
+            },
+            {
                 "source": "https://storage.googleapis.com/wvmedia/cenc/h264/tears/tears.mpd",
                 "poster": "images/posters/tears.jpg",
                 "title": "Tears of Steel",
                 "license":"https://proxy.uat.widevine.com/proxy"
+            },
+            {
+                "description": "Sintel is an independently produced short film, initiated by the Blender Foundation as a means to further improve and validate the free/open source 3D creation suite Blender. With initial funding provided by 1000s of donations via the internet community, it has again proven to be a viable development model for both open 3D technology as for independent animation film.\nThis 15 minute film has been realized in the studio of the Amsterdam Blender Institute, by an international team of artists and developers. In addition to that, several crucial technical and creative targets have been realized online, by developers and artists and teams all over the world.\nwww.sintel.org",
+                "source": "https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd",
+                "subtitle": "By Blender Foundation",
+                "poster": "https://storage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
+                "title": "Sintel",
+                "license": "https://cwip-shaka-proxy.appspot.com/no_auth"
             }
         ]
     }
 ];
+
+const ENCRYPTED_TEST_VIDEO = "";
+const WIDEVINE = "";
 
 export default epgData;

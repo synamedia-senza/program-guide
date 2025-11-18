@@ -44,11 +44,11 @@ export class PlayerWidget extends HTMLElement {
         }
     }
 
-    load(asset) {
+    async load(asset) {
         this.asset = asset;
-        this.player.load(this.asset.source);
-        this.video.currentTime = 0;
         this.configure();
+        await this.player.load(this.asset.source);
+        this.video.currentTime = 0;
     }
 
     get currentTime() {
