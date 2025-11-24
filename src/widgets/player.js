@@ -105,7 +105,6 @@ export class PlayerWidget extends HTMLElement {
         this.playMode = false;
         this.video.pause();
     }
-    
 }
 
 customElements.define('player-widget', PlayerWidget);
