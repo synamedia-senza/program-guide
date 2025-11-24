@@ -1,4 +1,5 @@
 import { createElement, importStyles } from "../core/ui/element.js";
+import analytics from "../analytics.js"
 
 export class PlayerWidget extends HTMLElement {
     constructor() {
@@ -16,6 +17,8 @@ export class PlayerWidget extends HTMLElement {
                 this.video.play();
             }
         });
+        
+        this.initAnalytics();
     }
 
     configure() {
@@ -44,11 +47,37 @@ export class PlayerWidget extends HTMLElement {
         }
     }
 
+    async initAnalytics() {
+      const config = await this.loadAnalyticsConfig();
+      await analytics.init("Program Guide", {
+        google: {gtag: config.googleAnalyticsId, debug: true},
+        ipdata: {apikey: config.ipDataAPIKey},
+        lifecycle: {raw: false, summary: true},
+        player: {raw: false, summary: true}
+      });
+      analytics.trackPlayerEvents(this.player, this.video, (ctx) => this.asset);
+    }
+
+    async loadAnalyticsConfig(url = "./src/config.json") {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) return {};
+        return await res.json();
+      } catch {
+        console.warn("Analytics config.json not found");
+        return {};
+      }
+    }
+    
     async load(asset) {
         this.asset = asset;
         this.configure();
         await this.player.load(this.asset.source);
         this.video.currentTime = 0;
+    }
+
+    unload() {
+      this.player.unload();
     }
 
     get currentTime() {
@@ -76,6 +105,7 @@ export class PlayerWidget extends HTMLElement {
         this.playMode = false;
         this.video.pause();
     }
+    
 }
 
 customElements.define('player-widget', PlayerWidget);

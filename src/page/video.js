@@ -31,6 +31,7 @@ class VideoPage extends Page {
     handleKey(e) {
         if (e.keyCode === KEY_CODES.BACK) {
             Page.back();
+            setTimeout(() => this.player.unload(), 100);
         }
         else if (e.keyCode === KEY_CODES.ENTER) {
             Page.goto("/banner");
