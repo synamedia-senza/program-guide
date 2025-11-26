@@ -25,14 +25,11 @@ class VideoPage extends Page {
     }
 
     pageBlurred() {
-        if (this.visible()) {
-            this.player.pause();
-        }
+        this.player.pause();
     }
 
     pageHidden() {
-        this.player.pause();
-        this.player.unload();
+        setTimeout(() => this.player.unload(), 100);
     }
 
     handleKey(e) {
