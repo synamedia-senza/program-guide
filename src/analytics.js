@@ -104,7 +104,7 @@ class SenzaAnalytics {
       transport_type: 'beacon',
     };
     gtag('event', eventName, data)
-    console.log('event', eventName, data);
+    console.log('analytics.logEvent', eventName, data);
   }
 
   //// LIFECYCLE ////
