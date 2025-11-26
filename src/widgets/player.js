@@ -76,10 +76,6 @@ export class PlayerWidget extends HTMLElement {
         this.video.currentTime = 0;
     }
 
-    unload() {
-      this.player.unload();
-    }
-
     get currentTime() {
         return this.video.currentTime;
     }
