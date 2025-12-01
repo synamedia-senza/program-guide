@@ -8,7 +8,7 @@ export class PlayerWidget extends HTMLElement {
         this.video = createElement(this.shadowRoot, {
             className: "root"
         }, "video");
-        this.player = new shaka.Player();
+        this.player = new senza.ShakaPlayer();
         this.player.attach(this.video);
         this.playMode = false;
         this.video.addEventListener('canplay', () => {
