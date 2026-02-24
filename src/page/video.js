@@ -23,7 +23,7 @@ class VideoPage extends Page {
 
     pageFocused() {
         this.player.play();
-        senza.lifecycle.autoBackground = true;
+        senza.lifecycle.autoBackground = false;
     }
 
     pageBlurred() {

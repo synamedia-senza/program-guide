@@ -1,5 +1,6 @@
 await senza.init();
 
+import "./src/messages/client.js";
 import "./src/widgets/player.js";
 
 import "./src/page/main.js";
