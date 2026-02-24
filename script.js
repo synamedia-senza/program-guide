@@ -8,7 +8,8 @@ import "./src/page/banner.js";
 
 window.addEventListener('load', function () {
     senza.lifecycle.configure({
-        autoBackground: {enabled: true, timeout: {playing: 15, idle: 15}}
+        autoBackground: {enabled: true, timeout: {playing: 15, idle: 15}},
+        autoSuspend: {enabled: true, timeout: {playing: 15, idle: 15}}
     });
 
     senza.uiReady();
